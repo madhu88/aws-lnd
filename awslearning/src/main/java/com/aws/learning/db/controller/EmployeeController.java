@@ -21,12 +21,12 @@ public class EmployeeController {
 	
 	@PostMapping(path = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody String addUser(@RequestBody Employee employee) {
-		String finalOutcome = "{ \" outcome \" : \" falied \"}"; 
+		String finalOutcome = "{ \" outcome \" : \" failed \"}"; 
 		System.out.println("########## Employee = " + employee);
 		if (null != employee) {
 			System.out.println("########## Employee = " + employee.toString());
 			employeeRepository.save(employee);
-			finalOutcome = finalOutcome.replace("falied", "saved");
+			finalOutcome = finalOutcome.replace("failed", "saved");
 		}
 		System.out.println("########## finalOutcome = " + finalOutcome);
 		return finalOutcome;
